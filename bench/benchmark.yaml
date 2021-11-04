@@ -1,0 +1,15 @@
+---
+concurrency: 10
+base: 'http://51.91.81.9'
+iterations: 100
+rampup: 2
+
+plan:
+  - name: Simple question
+    request:
+      url: /predict
+      method: POST
+      body: '{"question":"What is extractive question answering?", "context":"Extractive Question Answering is the task of extracting an answer from a text given a question. An example of a question answering dataset is the SQuAD dataset, which is entirely based on that task. If you would like to fine-tune a model on a SQuAD task, you may leverage the examples/pytorch/question-answering/run_squad.py script."}'
+      headers:
+        Content-Type: application/json
+        Host: serving.ai.com
